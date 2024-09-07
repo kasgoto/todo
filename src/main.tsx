@@ -6,7 +6,7 @@ import "./index.css"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename='/'>
+    <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/todo' : '/'}>
       <Routes>
         <Route path='/'> {<App />}</Route>
       </Routes>
